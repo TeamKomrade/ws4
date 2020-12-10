@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="15dp"
+    android:layout_marginBottom="4dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="left|top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/colorPureBlack"
+                android:id="@+id/CurrencyIconImageView"
+                android:text="🇺🇸"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/colorPureBlack"
+                android:id="@+id/CurrencyShortNameTextView"
+                android:layout_marginLeft="8dp"
+                android:text="USD"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/CurrencyNameTextView"
+            android:textSize="10sp"
+            android:text="AMERIKASSS DOLARS"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:id="@+id/BuyPriceTextView"
+        android:text="ЦЕНА ПОК"
+        android:textColor="@color/colorPrimary"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/SellPriceTextView"
+        android:text="ЦЕНА ПРОД"/>
+</FrameLayout>
