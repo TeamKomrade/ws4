@@ -10,13 +10,17 @@
     <FrameLayout
         android:layout_gravity="top"
         android:background="@color/colorVeryDarkGray"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
             android:background="@drawable/ic_baseline_person_24"
             android:layout_gravity="left"
             style="@style/button_main_menu" />
-        <SearchView
+        <TextView
+            android:id="@+id/fullNameTextView"
+            android:textSize="18sp"
+            android:text="FULL_NAME"
+            android:textColor="@color/colorGray"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -26,11 +30,19 @@
             android:layout_gravity="right"
             style="@style/button_main_menu"/>
     </FrameLayout>
+
+    <FrameLayout
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="76dp"
+        android:id="@+id/fragmentFrameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
     <LinearLayout
         android:layout_gravity="bottom|center"
         android:background="@color/colorVeryDarkGray"
         android:gravity="center_horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:orientation="vertical"
@@ -102,5 +114,7 @@
                 android:textSize="12sp"/>
         </LinearLayout>
     </LinearLayout>
+
+
 
 </FrameLayout>

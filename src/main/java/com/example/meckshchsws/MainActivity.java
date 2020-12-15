@@ -1,5 +1,6 @@
 package com.example.meckshchsws;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,11 +22,12 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private static final String APP_PREFERENCES = "MaksWS";
     private static final String USER_LOGIN = "login";
-    private static final String USER_PASSOWRD = "password";
+    private static final String USER_PASSWORD = "password";
 
-    private ArrayList<User> users = new ArrayList<User>();
+    //private ArrayList<User> users = new ArrayList<User>();
     private SharedPreferences prefs;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +37,11 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.YYYY");
         dateTextView.setText(sdf.format(date));
-
-        users.add(new User("user", "password"));
+        Util.FillUsers();
 
         prefs = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         String login = prefs.getString(USER_LOGIN, "");
-        String password = prefs.getString(USER_PASSOWRD, "");
+        String password = prefs.getString(USER_PASSWORD, "");
         if (!login.isEmpty() && !password.isEmpty()) tryLogin(login, password);
     }
 
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("Введите лологен и паролк");
         builder.setView(login_view);
         builder.setPositiveButton("vhodi", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 EditText login = login_view.findViewById(R.id.editTextTextPersonName);
@@ -75,21 +78,14 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void tryLogin(String login, String password) {
-        boolean userExists = false;
-        for (User user: users) {
-            boolean loginExists = user.getLogin().equals(login);
-            boolean passwordExists = user.getPassword().equals(password);
-            if (loginExists && passwordExists) {
-                userExists = true;
-                break;
-            }
-        }
+        boolean userExists = Util.getUser(login, password) != null;
         if (userExists)
         {
             SharedPreferences.Editor e = prefs.edit();
             e.putString(USER_LOGIN, login);
-            e.putString(USER_PASSOWRD, password);
+            e.putString(USER_PASSWORD, password);
             e.apply();
 
             Intent logIntent = new Intent(MainActivity.this, MainMenuActivity.class);
