@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <Button
+                android:onClick="openMainPage"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_home_24"
                 style="@style/button_main_menu"/>
@@ -85,6 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1">
             <Button
+                android:onClick="openHistoryPage"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_history_24"
                 style="@style/button_main_menu"/>

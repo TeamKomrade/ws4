@@ -18,7 +18,9 @@ public class Util {
 
     public static void FillUsers() {
         User newUser = new User("Валерий","Жмышенко","Альбертович","user", "password");
-        newUser.addCard(new CreditCard(CredicCardType.DEBIT,"880099990088", 1047.09));
+        newUser.addCard(new CreditCard(CreditCardType.DEBIT,"880099990088", 1047.09).setProvider(CardProvider.MASTERCARD));
+        newUser.addCard(new CreditCard(CreditCardType.CREDIT,"198755198557", -190.99).setProvider(CardProvider.VISA));
+        newUser.addCard(new CreditCard(CreditCardType.DEBIT,"16638123671263", 298.11).setProvider(CardProvider.MIR));
         Users.add(newUser);
     }
 }

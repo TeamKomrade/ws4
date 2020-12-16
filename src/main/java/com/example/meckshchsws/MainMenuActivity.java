@@ -35,7 +35,6 @@ public class MainMenuActivity extends AppCompatActivity {
         name.setText(user.getFirstAndMiddleName());
 
         MainMenuCardsFragment fragment = new MainMenuCardsFragment(user);
-        //
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.fragmentFrameLayout, fragment);
         ft.commit();
@@ -54,4 +53,17 @@ public class MainMenuActivity extends AppCompatActivity {
         finish();
     }
 
+    public void openHistoryPage(View view) {
+        MainMenuHistoryFragment fragment = new MainMenuHistoryFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragmentFrameLayout, fragment);
+        ft.commit();
+    }
+
+    public void openMainPage(View view) {
+        MainMenuCardsFragment fragment = new MainMenuCardsFragment(user);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragmentFrameLayout, fragment);
+        ft.commit();
+    }
 }

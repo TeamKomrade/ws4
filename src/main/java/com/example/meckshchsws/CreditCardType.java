@@ -1,6 +1,6 @@
 package com.example.meckshchsws;
 
-public enum CredicCardType {
+public enum CreditCardType {
     DEBIT,
     CREDIT
 }
