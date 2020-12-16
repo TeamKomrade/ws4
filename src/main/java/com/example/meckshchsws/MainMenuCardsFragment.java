@@ -20,8 +20,15 @@ import java.util.ArrayList;
 
 public class MainMenuCardsFragment extends Fragment {
     private User _user;
-    private ListView listView;
+
+    private ListView cardsListView;
+    private ListView accountsListView;
+    private ListView creditsListView;
+
     private CardListAdapter cardListAdapter;
+    private AccountListAdapter accountListAdapter;
+    private CardListAdapter creditListAdapter;
+
     private LayoutInflater layoutInflater;
     public MainMenuCardsFragment() {
         // Required empty public constructor
@@ -38,9 +45,13 @@ public class MainMenuCardsFragment extends Fragment {
     }
 
     private void Init(View view) {
-        listView = view.findViewById(R.id.cardsListView);
+        cardsListView = view.findViewById(R.id.cardsListView);
         cardListAdapter = new CardListAdapter();
-        listView.setAdapter(cardListAdapter);
+        cardsListView.setAdapter(cardListAdapter);
+
+        accountsListView = view.findViewById(R.id.accountsListView);
+        accountListAdapter = new AccountListAdapter();
+        accountsListView.setAdapter(accountListAdapter);
     }
 
     @Override
@@ -83,6 +94,37 @@ public class MainMenuCardsFragment extends Fragment {
             cardBalanceTextView.setText(card.getBalanceAsString());
             cardNumberTextView.setText(card.getNumberObscured());
             cardIconView.setImageResource(card.getIconID());
+            return convertView;
+        }
+    }
+
+    protected class AccountListAdapter extends BaseAdapter
+    {
+        @Override
+        public int getCount() {
+            return _user.getAccounts().size();
+        }
+
+        @Override
+        public BankAccount getItem(int position) {
+            return _user.getAccounts().get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return  _user.getCards().indexOf(position);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            final BankAccount account = getItem(position);
+            convertView = layoutInflater.inflate(R.layout.item_account, parent,false);
+
+            TextView accountBalanceTextView = convertView.findViewById(R.id.accountBalanceTextView);
+            TextView accountNumberTextView = convertView.findViewById(R.id.accountNumberTextView);
+
+            accountBalanceTextView.setText(account.getBalanceAsString());
+            accountNumberTextView.setText(account.getNumberObscured());
             return convertView;
         }
     }

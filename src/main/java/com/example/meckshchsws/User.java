@@ -1,9 +1,13 @@
 package com.example.meckshchsws;
 
+import androidx.annotation.ArrayRes;
+
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class User {
+    private ArrayList<BankAccount> Accounts;
     private String FirstName;
     private String LastName;
     private String MiddleName;
@@ -26,6 +30,7 @@ public class User {
 
     public User(String firstName, String lastName, String middleName, String login, String password) {
         Cards = new ArrayList<CreditCard>();
+        Accounts = new ArrayList<BankAccount>();
         FirstName = firstName;
         LastName = lastName;
         MiddleName = middleName;
@@ -82,5 +87,15 @@ public class User {
 
     public String getFirstAndMiddleName () {
         return FirstName + " " + MiddleName;
+    }
+
+    public ArrayList<BankAccount> getAccounts() { return Accounts;}
+
+    public void setAccounts(ArrayList<BankAccount> accounts) {
+        Accounts = accounts;
+    }
+
+    public void addAccount(BankAccount acc) {
+        Accounts.add(acc);
     }
 }
