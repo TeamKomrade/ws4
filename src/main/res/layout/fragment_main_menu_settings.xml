@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuSettingsFragment"
+    android:background="@color/cardview_light_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="12dp"
+        android:divider="@color/colorGray"
+        android:dividerPadding="1dp">
+        <FrameLayout
+            android:id="@+id/changePassView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Изменение пароля"
+                style="@style/button_settings"/>
+            <Button
+                style="@style/arrow_settings"/>
+        </FrameLayout>
+        <View style="@style/divider_settings" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Изменение логина"
+                style="@style/button_settings"/>
+            <Button
+                style="@style/arrow_settings"/>
+        </FrameLayout>
+        <View style="@style/divider_settings" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="История посещений"
+                style="@style/button_settings"/>
+            <Button
+                style="@style/arrow_settings"/>
+        </FrameLayout>
+        <View style="@style/divider_settings" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Информация о приложении"
+                style="@style/button_settings"/>
+            <Button
+                style="@style/arrow_settings" />
+        </FrameLayout>
+        <View style="@style/divider_settings" />
+        <FrameLayout
+            android:id="@+id/exitToMainView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Выход"
+                style="@style/button_settings"/>
+            <Button
+                style="@style/arrow_settings" />
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

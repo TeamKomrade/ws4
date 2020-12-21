@@ -21,7 +21,13 @@ public class Util {
         newUser.addCard(new CreditCard(CreditCardType.DEBIT,"880099990088", 1047.09).setProvider(CardProvider.MASTERCARD));
         newUser.addCard(new CreditCard(CreditCardType.CREDIT,"198755198557", -190.99).setProvider(CardProvider.VISA));
         newUser.addCard(new CreditCard(CreditCardType.DEBIT,"16638123671263", 298.11).setProvider(CardProvider.MIR));
+        newUser.addCard(new CreditCard(CreditCardType.DEBIT,"880099990088", 1047.09).setProvider(CardProvider.MASTERCARD));
+        newUser.addCard(new CreditCard(CreditCardType.CREDIT,"198755198557", -190.99).setProvider(CardProvider.VISA));
+        newUser.addCard(new CreditCard(CreditCardType.DEBIT,"16638123671263", 298.11).setProvider(CardProvider.MIR));
 
+        newUser.addAccount(new BankAccount(19209.11, "693761279379"));
+        newUser.addAccount(new BankAccount(-91, "987239866901076"));
+        newUser.addAccount(new BankAccount(100, "208764086298"));
         newUser.addAccount(new BankAccount(19209.11, "693761279379"));
         newUser.addAccount(new BankAccount(-91, "987239866901076"));
         newUser.addAccount(new BankAccount(100, "208764086298"));

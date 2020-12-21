@@ -42,15 +42,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void exitToMain(View view) {
-        SharedPreferences prefs = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        SharedPreferences.Editor e = prefs.edit();
-        e.putString(USER_LOGIN, "");
-        e.putString(USER_PASSWORD, "");
-        e.apply();
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        exitToMain();
     }
 
     public void openHistoryPage(View view) {
@@ -66,4 +58,24 @@ public class MainMenuActivity extends AppCompatActivity {
         ft.replace(R.id.fragmentFrameLayout, fragment);
         ft.commit();
     }
+
+    public void openSetting(View view) {
+        MainMenuSettingsFragment fragment = new MainMenuSettingsFragment(this);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragmentFrameLayout, fragment);
+        ft.commit();
+    }
+
+    public void exitToMain() {
+        SharedPreferences prefs = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor e = prefs.edit();
+        e.putString(USER_LOGIN, "");
+        e.putString(USER_PASSWORD, "");
+        e.apply();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 }

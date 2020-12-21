@@ -23,4 +23,25 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
+    <style name="button_settings">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPureBlack</item>
+        <item name="android:paddingVertical">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="arrow_settings">
+        <item name="android:layout_gravity">center|right</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">@drawable/ic_baseline_arrow_forward_ios_24</item>
+    </style>
+
+    <style name="divider_settings">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorGray</item>
+    </style>
+
 </resources>

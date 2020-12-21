@@ -13,6 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         <Button
+            android:onClick="openSetting"
             android:background="@drawable/ic_baseline_person_24"
             android:layout_gravity="left"
             style="@style/button_main_menu" />
@@ -36,7 +37,8 @@
         android:layout_marginBottom="76dp"
         android:id="@+id/fragmentFrameLayout"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_height="wrap_content">
+    </FrameLayout>
 
     <LinearLayout
         android:layout_gravity="bottom|center"
